@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="tr" class="h-100">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ürün Portalı</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <style>
+        /* Layout'a Özel Ekstra Süslemeler */
+        .custom-navbar {
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid #6366f1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .navbar-brand span {
+            letter-spacing: 1px;
+            color: #1e293b;
+        }
+
+        .logo-box {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: #475569 !important;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin: 0 5px;
+        }
+
+            .nav-link:hover {
+                color: #6366f1 !important;
+                background: rgba(99, 102, 241, 0.05);
+                transform: translateY(-2px);
+            }
+
+        .footer {
+            background: #ffffff;
+            padding: 25px 0;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column h-100 bg-light">
+    <header>
+        <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center fw-bold" href="/Products">
+                    <div class="logo-box me-2">
+                        <i class="fa-solid fa-layer-group text-white"></i>
+                    </div>
+                    <span>ÜRÜN<span class="text-primary">PORTALI</span></span>
+                </a>
+
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="fa-solid fa-bars-staggered text-primary"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link px-3 d-flex align-items-center" href="/Products">
+                                <i class="fa-solid fa-house-chimney me-2 opacity-75"></i> Anasayfa
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 d-flex align-items-center" href="/Home/Privacy">
+                                <i class="fa-solid fa-user-shield me-2 opacity-75"></i> Güvenlik
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="flex-shrink-0 animate__animated animate__fadeIn">
+        <div class="container pb-5">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-4">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-start text-center">
+                    <span class="text-muted">© 2025 - <span class="text-primary fw-bold">StockMaster v1.0</span></span>
+                </div>
+                <div class="col-md-6 text-md-end text-center mt-2 mt-md-0">
+                    <a href="#" class="text-muted text-decoration-none me-3"><i class="fa-brands fa-github fs-5"></i></a>
+                    <a href="#" class="text-muted text-decoration-none"><i class="fa-brands fa-linkedin fs-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

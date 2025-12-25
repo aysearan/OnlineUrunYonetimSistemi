@@ -1,0 +1,27 @@
+﻿@model Product
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5 text-center">
+            <div class="glass-form-card border-danger border-opacity-25">
+                <div class="text-danger mb-4">
+                    <i class="fa-solid fa-circle-exclamation fa-4x mb-3 animate__animated animate__shakeX"></i>
+                    <h3 class="fw-bold">Dikkat: Siliniyor!</h3>
+                </div>
+
+                <p class="text-muted mb-4">
+                    <strong>"@Model.Name"</strong> isimli ürünü kalıcı olarak silmek üzeresiniz. Bu işlem geri alınamaz.
+                </p>
+
+                <form method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-danger py-3 rounded-pill fw-bold">
+                            EVET, SİLİNSİN
+                        </button>
+                        <a asp-action="Index" class="btn btn-light py-2 rounded-pill">Hayır, Vazgeç</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
